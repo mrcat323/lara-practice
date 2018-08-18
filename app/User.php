@@ -26,4 +26,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+    * Relation: Grab all user's posts, binding it with the User's ID
+    * Return user's posts
+    *
+    * @return App\Post
+    */
+
+    public function posts()
+    {
+      return $this->hasMany('App\Posts');
+    }
 }

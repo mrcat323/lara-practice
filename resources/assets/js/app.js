@@ -8,6 +8,7 @@
 require('./bootstrap');
 import Vue from 'vue'
 import App from './components/App.vue'
+import Navbar from './components/Navbar.vue'
 import router from './router'
 
 const app = new Vue({
