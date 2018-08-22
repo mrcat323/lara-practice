@@ -6,15 +6,17 @@
           <h1 class="blog-title">The Bootstrap Blog</h1>
           <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
         </div>
-        <router-link :to="{ name: 'post-create' }" class="btn btn-lg btn-success"><i class="fa fa-plus"></i> Post</router-link>
-        <div class="row">
-
+        <div class="loading" v-if="loading">Loading...</div>
+        <div class="row" v-else-if="posts">
+          <div class="buttons">
+            <router-link :to="{ name: 'post-create' }" class="btn btn-lg btn-success"><i class="fa fa-plus"></i> Post</router-link>
+          </div>
           <div class="col-sm-8 blog-main">
 
             <div class="blog-post" v-for="post in posts">
               <h2 class="blog-post-title">{{ post.title }}</h2>
-              <p class="blog-post-meta">{{ post.created_at }} by <a href="#">Mark</a> <router-link :to="{ name: 'post-edit', params: {id: post.id} }"><i class="fa fa-pencil-alt"></i></router-link>  <button class="btn btn-danger" @click="deletePost"><i class="fa fa-trash"></i> </button></p>
-
+              <p class="blog-post-meta">{{ post.created_at }} by <a href="#">Mark</a> <router-link :to="{ name: 'post-edit', params: {id: post.id} }"><i class="fa fa-pencil-alt"></i></router-link>
+              <delete-button :post-id="post.id" @action="deletePost"></delete-button></p>
               <p v-html="post.desc"></p>
             </div><!-- /.blog-post -->
             <nav>
@@ -62,7 +64,7 @@
 
       </div>
 
-      <footer class="blog-footer">
+      <footer class="blog-footer" v-if="!loading">
         <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
         <p>
           <a href="#">Back to top</a>
@@ -75,11 +77,19 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 
+Vue.component('delete-button', {
+  props: ['postId'],
+  template:
+    '<button class="btn btn-danger" @click="$emit(\'action\', postId)"><i class="fa fa-trash"></i></button>',
+});
+
 Vue.use(VueResource)
+
 export default {
   data() {
     return {
-      posts: []
+      posts: [],
+      loading: true
     }
   },
   methods: {
@@ -87,12 +97,17 @@ export default {
       let self = this;
       Vue.http.get('/api/blog/get').then(function (response) {
         self.posts = response.data.posts;
+        self.loading = false;
       }, function (error) {
         throw error;
       });
     },
-    deletePost() {
-      let self = this;
+    deletePost(postId) {
+      Vue.http.post('/api/post/delete', {id: postId}).then(function (response) {
+        this.getPosts();
+      }, function (error) {
+        throw error;
+      });
     }
   },
   created() {

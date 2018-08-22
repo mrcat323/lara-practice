@@ -1,5 +1,14 @@
 <template>
-    <div class="form-sender">
+    <div class="response" v-if="response">
+      <div class="alert alert-success">The post have been successfully created!</div>
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ post.title }}</h2>
+        <p class="blog-post-meta">{{ date }} by <a href="#">Mark</a></p>
+
+        <p v-html="post.desc"></p>
+      </div><!-- /.blog-post -->
+    </div>
+    <div class="form-sender" v-else-if="edit">
       <div class="form-group">
         <label >Title</label>
         <input type="text" class="form-control" v-model="post.title">
@@ -15,13 +24,16 @@
 <script>
 import Vue from 'vue'
 import VueResource from 'vue-resource'
+import dayjs from 'dayjs'
 
 Vue.use(VueResource)
 
 export default {
   data() {
     return {
-      post: {}
+      post: {},
+      response: false,
+      edit: true
     }
   },
   methods: {
@@ -29,10 +41,19 @@ export default {
       let self = this,
           post = self.post;
       Vue.http.post('/api/post/create', {id: post.id, title: post.title, desc: post.desc}).then(function (response) {
-        console.log(response);
+        self.edit = false;
+        self.response = true;
       }, function (error) {
         throw error;
       })
+    }
+  },
+  computed: {
+    date() {
+      let now = Date.now();
+      dayjs(now);
+      let converted = dayjs().year() + '-' + dayjs().month() + '-' + dayjs().date() + ' ' + dayjs().hour() + ':' + dayjs().minute() + ':' + dayjs().second();
+      return converted;
     }
   }
 }

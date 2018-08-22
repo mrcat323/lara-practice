@@ -7,7 +7,7 @@
         <li role="presentation"><router-link :to="{ name: 'blog' }">Blog</router-link></li>
       </ul>
     </nav>
-    <h3 class="text-muted">Lara-Practice</h3>
+    <h3 class="text-muted"><router-link to="/">Lara-Practice</router-link></h3>
   </div>
 </template>
 

@@ -1,5 +1,14 @@
 <template>
-    <div class="form-sender">
+    <div class="response" v-if="response">
+      <div class="alert alert-success">The post have been successfully edited!</div>
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ post.title }}</h2>
+        <p class="blog-post-meta">{{ post.updated_at }} by <a href="#">Mark</a></p>
+
+        <p v-html="post.desc"></p>
+      </div><!-- /.blog-post -->
+    </div>
+    <div class="form-sender" v-else-if="edit">
       <div class="form-group">
         <label >Title</label>
         <input type="text" class="form-control" v-model="post.title">
@@ -22,7 +31,9 @@ Vue.use(VueResource)
 export default {
   data() {
     return {
-      post: {}
+      post: {},
+      edit: true,
+      response: false
     }
   },
   methods: {
@@ -40,7 +51,8 @@ export default {
       let self = this,
           post = self.post;
       Vue.http.post('/api/post/store', {id: post.id, title: post.title, desc: post.desc}).then(function (response) {
-        console.log(response);
+        self.edit = false;
+        self.response = true;
       }, function (error) {
         throw error;
       })
