@@ -7,11 +7,5 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      header: 'Info about the page'
-    }
-  }
-}
+export default {}
 </script>

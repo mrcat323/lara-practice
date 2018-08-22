@@ -41,11 +41,5 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      header: 'Welcome to our website!'
-    }
-  }
-}
+export default {}
 </script>

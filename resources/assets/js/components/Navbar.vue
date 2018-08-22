@@ -2,7 +2,7 @@
   <div class="header clearfix">
     <nav>
       <ul class="nav nav-pills pull-right">
-        <li role="presentation" class="active"><router-link :to="{ name: 'home' }">Home</router-link></li>
+        <li role="presentation"><router-link :to="{ name: 'home' }">Home</router-link></li>
         <li role="presentation"><router-link :to="{ name: 'info' }">About</router-link></li>
         <li role="presentation"><router-link :to="{ name: 'blog' }">Blog</router-link></li>
       </ul>

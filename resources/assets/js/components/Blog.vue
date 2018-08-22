@@ -6,14 +6,14 @@
           <h1 class="blog-title">The Bootstrap Blog</h1>
           <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
         </div>
-
+        <router-link :to="{ name: 'post-create' }" class="btn btn-lg btn-success"><i class="fa fa-plus"></i> Post</router-link>
         <div class="row">
 
           <div class="col-sm-8 blog-main">
 
             <div class="blog-post" v-for="post in posts">
               <h2 class="blog-post-title">{{ post.title }}</h2>
-              <p class="blog-post-meta">{{ post.created_at }} by <a href="#">Mark</a></p>
+              <p class="blog-post-meta">{{ post.created_at }} by <a href="#">Mark</a> <router-link :to="{ name: 'post-edit', params: {id: post.id} }"><i class="fa fa-pencil-alt"></i></router-link>  <button class="btn btn-danger" @click="deletePost"><i class="fa fa-trash"></i> </button></p>
 
               <p v-html="post.desc"></p>
             </div><!-- /.blog-post -->
@@ -90,9 +90,12 @@ export default {
       }, function (error) {
         throw error;
       });
+    },
+    deletePost() {
+      let self = this;
     }
   },
-  mounted() {
+  created() {
     this.getPosts();
   }
 }
