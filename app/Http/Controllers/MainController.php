@@ -7,16 +7,15 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
 
+    /**
+    * The main stuff of the app
+    * with this we init the work
+    *
+    * @return \Illuminate\Http\Response
+    */
 
-    public function index()
+    public function init()
     {
-      return view('welcome');
+      return view('init');
     }
-
-    public function blog()
-    {
-      return view('blog');
-    }
-
-
 }

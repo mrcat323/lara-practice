@@ -8,6 +8,14 @@
         <p v-html="post.desc"></p>
       </div><!-- /.blog-post -->
     </div>
+    <div class="delete" v-else-if="del">
+      <div class="alert alert-success">The post have been successfully deleted!</div>
+    </div>
+    <div class="error-404" v-else-if="error">
+      <div class="jumbotron">
+        <h2 class="text-center">Error 404 Not Found</h2>
+      </div>
+    </div>
     <div class="form-sender" v-else-if="edit">
       <div class="form-group">
         <label >Title</label>
@@ -33,23 +41,27 @@ export default {
     return {
       post: {},
       edit: true,
+      del: false,
+      error: false,
       response: false
     }
   },
   methods: {
     grabPost(postId) {
-        var self = this,
+        let self = this,
             url = '/api/post/edit/' + postId;
+
         Vue.http.get(url).then(function (response) {
           const result = response.data.object;
           self.post = result;
         }, function (error) {
-          throw error;
+          self.error = true;
         });
     },
     editPost() {
       let self = this,
           post = self.post;
+
       Vue.http.post('/api/post/store', {id: post.id, title: post.title, desc: post.desc}).then(function (response) {
         self.edit = false;
         self.response = true;
@@ -62,16 +74,16 @@ export default {
           post = self.post;
 
       Vue.http.post('/api/post/delete', {id: post.id}).then(function (response) {
-        console.log(response);
+        self.edit = false;
+        self.del = true;
       }, function (error) {
         throw error;
       });
     }
   },
   created() {
-    var postId = this.$route.params.id;
+    let postId = this.$route.params.id;
     this.grabPost(postId);
-    //alert(postId);
   }
 }
 </script>

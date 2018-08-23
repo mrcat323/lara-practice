@@ -6,63 +6,105 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
-use Carbon\Carbon;
-
 class PostsController extends Controller
 {
 
+    /**
+    * Get all posts in ordered position by ID
+    *
+    * @param \App\Post $post
+    *
+    * @return \Illuminate\Http\Response
+    */
 
     public function getAllPosts(Post $post)
     {
-      $posts = $post->all();
+      $posts = $post
+                  ->orderBy(
+                    'id', 'desc'
+                    )
+                  ->get();
       $result['status'] = 1;
       $result['msg'] = 'success';
       $result['posts'] = $posts;
       return $result;
     }
 
-    public function singlePostShow(Post $post, $id)
+    /**
+    * Grab a post from DB by id
+    * and show it to user
+    *
+    * @param \App\Post $post
+    * @param int $id
+    *
+    * @return \Illuminate\Http\Response
+    */
+
+    public function show(Post $post, $id)
     {
-      $singlePost = $post->find($id);
+      $show = $post->find($id);
       $result['status'] = 1;
       $result['msg'] = 'success';
-      $result['object'] = $singlePost;
+      $result['object'] = $show;
       return $result;
     }
 
-    public function saveChanges(Request $request, Post $post)
+    /**
+    * Update data with sending requests
+    *
+    * @param \Illuminate\Http\Request $request
+    * @param \App\Post $post
+    *
+    * @return \Illuminate\Http\Response
+    */
+
+    public function update(Request $request, Post $post)
     {
-      $postId = $request->id;
-      $postTitle = $request->title;
-      $postDescription = $request->desc;
-      $editPost = $post->find($postId);
-      $editPost->title = $postTitle;
-      $editPost->desc = $postDescription;
-      $editPost->updated_at = Carbon::now();
-      $editPost->save();
+      $post->where(
+        'id', $request->id
+        )->update([
+          'title' => $request->title,
+          'desc' => $request->desc
+        ]);
       $result['status'] = 1;
       $result['msg'] = 'success';
       return $result;
     }
+
+    /**
+    * Create a new post, title and description of a post
+    *
+    * @param \Illuminate\Http\Request $request
+    * @param \App\Post $post
+    *
+    * @return \Illuminate\Http\Response
+    */
 
     public function store(Request $request, Post $post)
     {
-      $postTitle = $request->title;
-      $postDescription = $request->desc;
-      $post->title = $postTitle;
-      $post->desc = $postDescription;
-      $post->created_at = Carbon::now();
-      $post->save();
+      $post->create([
+        'title' => $request->title,
+        'desc' => $request->desc
+      ]);
       $result['status'] = 1;
       $result['msg'] = 'success';
       return $result;
     }
 
-    public function delete(Request $request, Post $post)
+    /**
+    * Delete post by request grabing an ID of a post
+    *
+    * @param \Illuminate\Http\Request $request
+    * @param \App\Post $post
+    *
+    * @return \Illuminate\Http\Response
+    */
+
+    public function destroy(Request $request, Post $post)
     {
-      $postId = $request->id;
-      $postShouldBeDeleted = $post->find($postId);
-      $postShouldBeDeleted->delete();
+      $post
+          ->find($request->id)
+          ->delete();
       $result['status'] = 1;
       $result['msg'] = 'success';
       return $result;

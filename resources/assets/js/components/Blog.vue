@@ -14,7 +14,7 @@
           <div class="col-sm-8 blog-main">
 
             <div class="blog-post" v-for="post in posts">
-              <h2 class="blog-post-title">{{ post.title }}</h2>
+              <h2 class="blog-post-title"><router-link :to="{ name: 'post', params: {id: post.id} }">{{ post.title }}</router-link></h2>
               <p class="blog-post-meta">{{ post.created_at }} by <a href="#">Mark</a> <router-link :to="{ name: 'post-edit', params: {id: post.id} }"><i class="fa fa-pencil-alt"></i></router-link>
               <delete-button :post-id="post.id" @action="deletePost"></delete-button></p>
               <p v-html="post.desc"></p>
@@ -33,29 +33,13 @@
               <h4>About</h4>
               <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
             </div>
-            <div class="sidebar-module">
-              <h4>Archives</h4>
-              <ol class="list-unstyled">
-                <li><a href="#">March 2014</a></li>
-                <li><a href="#">February 2014</a></li>
-                <li><a href="#">January 2014</a></li>
-                <li><a href="#">December 2013</a></li>
-                <li><a href="#">November 2013</a></li>
-                <li><a href="#">October 2013</a></li>
-                <li><a href="#">September 2013</a></li>
-                <li><a href="#">August 2013</a></li>
-                <li><a href="#">July 2013</a></li>
-                <li><a href="#">June 2013</a></li>
-                <li><a href="#">May 2013</a></li>
-                <li><a href="#">April 2013</a></li>
-              </ol>
-            </div>
+
             <div class="sidebar-module">
               <h4>Elsewhere</h4>
               <ol class="list-unstyled">
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Facebook</a></li>
+                <li><a target="_blank" href="#">GitHub</a></li>
+                <li><a target="_blank" href="#">Twitter</a></li>
+                <li><a target="_blank" href="#">Facebook</a></li>
               </ol>
             </div>
           </div><!-- /.blog-sidebar -->
@@ -103,8 +87,9 @@ export default {
       });
     },
     deletePost(postId) {
+      let self = this;
       Vue.http.post('/api/post/delete', {id: postId}).then(function (response) {
-        this.getPosts();
+        self.getPosts();
       }, function (error) {
         throw error;
       });

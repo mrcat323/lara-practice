@@ -19,10 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/blog/get', 'PostsController@getAllPosts');
 
-Route::get('/post/edit/{id}', 'PostsController@singlePostShow');
+Route::get('/post/{id}', 'PostsController@show');
 
-Route::post('/post/store', 'PostsController@saveChanges');
+Route::get('/post/edit/{id}', 'PostsController@show');
+
+Route::post('/post/store', 'PostsController@update');
 
 Route::post('/post/create', 'PostsController@store');
 
-Route::post('/post/delete', 'PostsController@delete');
+Route::post('/post/delete', 'PostsController@destroy');
