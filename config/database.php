@@ -63,11 +63,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => $host,
+            'host' => env('DB_HOST', ''),
             'port' => '5432',
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
+            'database' => env('DB_DATABASE', ''),
+            'username' => env('DB_USERNAME', ''),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
