@@ -47743,106 +47743,104 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "jumbotron" }, [
+        _c("h1", [_vm._v("Hello World!")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "lead" }, [
+          _vm._v(
+            "Welcome to our website! This website was developed with Laravel and Vue JS, that's why looks pretty cool."
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "p",
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-lg btn-success",
+                attrs: { to: { name: "info" }, role: "button" }
+              },
+              [_vm._v("About Us")]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
+    ]),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "jumbotron" }, [
-          _c("h1", [_vm._v("Jumbotron heading")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "lead" }, [
-            _vm._v(
-              "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
-            )
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-lg btn-success",
-                attrs: { href: "#", role: "button" }
-              },
-              [_vm._v("Sign up today")]
-            )
-          ])
+    return _c("div", { staticClass: "row marketing" }, [
+      _c("div", { staticClass: "col-lg-6" }, [
+        _c("h4", [_vm._v("Why Lara-Practice ?")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "It called Lara-Practice because of practicing Laravel PHP Framework."
+          )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row marketing" }, [
-          _c("div", { staticClass: "col-lg-6" }, [
-            _c("h4", [_vm._v("Subheading")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum."
-              )
-            ]),
-            _vm._v(" "),
-            _c("h4", [_vm._v("Subheading")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum."
-              )
-            ]),
-            _vm._v(" "),
-            _c("h4", [_vm._v("Subheading")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Maecenas sed diam eget risus varius blandit sit amet non magna."
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-6" }, [
-            _c("h4", [_vm._v("Subheading")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum."
-              )
-            ]),
-            _vm._v(" "),
-            _c("h4", [_vm._v("Subheading")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum."
-              )
-            ]),
-            _vm._v(" "),
-            _c("h4", [_vm._v("Subheading")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Maecenas sed diam eget risus varius blandit sit amet non magna."
-              )
-            ])
-          ])
+        _c("h4", [_vm._v("What is this ?")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("It's a reactive app, you can pleasure by using it.")]),
+        _vm._v(" "),
+        _c("h4", [_vm._v("What is all for ?")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "The project was created for just practice Laravel and Vue JS skills."
+          )
         ])
       ]),
       _vm._v(" "),
-      _c("footer", { staticClass: "blog-footer" }, [
+      _c("div", { staticClass: "col-lg-6" }, [
+        _c("h4", [_vm._v("Why Open Source ?")]),
+        _vm._v(" "),
         _c("p", [
-          _vm._v("Blog template built for "),
-          _c("a", { attrs: { href: "http://getbootstrap.com" } }, [
-            _vm._v("Bootstrap")
-          ]),
-          _vm._v(" by "),
-          _c("a", { attrs: { href: "https://twitter.com/mdo" } }, [
-            _vm._v("@mdo")
-          ]),
-          _vm._v(".")
+          _vm._v(
+            "Because everyone could change something for something useful or fixed bug and pull requested, wrote issues, check that out."
+          )
         ]),
         _vm._v(" "),
-        _c("p", [_c("a", { attrs: { href: "#" } }, [_vm._v("Back to top")])])
+        _c("h4", [_vm._v("Why Laravel ?")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Because Laravel is great/cool PHP Framework, everyone likes that."
+          )
+        ]),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Why Vue JS ?")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v("Because this miracle stuff makes almost everything reactive.")
+        ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "blog-footer" }, [
+      _c("p", [
+        _vm._v("© Copyright 2018 Made with "),
+        _c("i", { staticClass: "fa fa-heart" }),
+        _vm._v(" by Mr. CaT")
+      ]),
+      _vm._v(" "),
+      _c("p", [_c("a", { attrs: { href: "#" } }, [_vm._v("Back to top")])])
     ])
   }
 ]
@@ -47916,11 +47914,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      header: 'About'
+      header: 'About',
+      about: 'Project was created just for practice, for practicing knowledge of Laravel + Vue JS. The project will be updated, should add new features, new stuff that you could enjoy it.'
     };
   }
 });
@@ -47933,13 +47941,34 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "jumbotron" }, [
-      _c("h1", { staticClass: "text-center" }, [_vm._v(_vm._s(_vm.header))])
-    ])
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "jumbotron" }, [
+        _c("h1", { staticClass: "text-center" }, [_vm._v(_vm._s(_vm.header))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.about))])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "blog-footer" }, [
+      _c("p", [
+        _vm._v("© Copyright 2018 Made with "),
+        _c("i", { staticClass: "fa fa-heart" }),
+        _vm._v(" by Mr. CaT")
+      ]),
+      _vm._v(" "),
+      _c("p", [_c("a", { attrs: { href: "#" } }, [_vm._v("Back to top")])])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -48005,13 +48034,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(4);
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -48148,73 +48170,65 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "col-sm-8 blog-main" },
-                [
-                  _vm._l(_vm.posts, function(post) {
-                    return _c("div", { staticClass: "blog-post" }, [
-                      _c(
-                        "h2",
-                        { staticClass: "blog-post-title" },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: { name: "post", params: { id: post.id } }
-                              }
-                            },
-                            [_vm._v(_vm._s(post.title))]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        { staticClass: "blog-post-meta" },
-                        [
-                          _vm._v(_vm._s(post.created_at) + " by "),
-                          _c("a", { attrs: { href: "#" } }, [_vm._v("Mark")]),
-                          _vm._v(" "),
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "post-edit",
-                                  params: { id: post.id }
-                                }
-                              }
-                            },
-                            [_c("i", { staticClass: "fa fa-pencil-alt" })]
-                          ),
-                          _vm._v(" "),
-                          _c("delete-button", {
-                            attrs: { "post-id": post.id },
-                            on: { action: _vm.deletePost }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("p", { domProps: { innerHTML: _vm._s(post.desc) } })
-                    ])
-                  }),
-                  _vm._v(" "),
-                  _vm._m(1)
-                ],
-                2
+                _vm._l(_vm.posts, function(post) {
+                  return _c("div", { staticClass: "blog-post" }, [
+                    _c(
+                      "h2",
+                      { staticClass: "blog-post-title" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "post", params: { id: post.id } }
+                            }
+                          },
+                          [_vm._v(_vm._s(post.title))]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticClass: "blog-post-meta" },
+                      [
+                        _vm._v(_vm._s(post.created_at) + " by "),
+                        _c("a", { attrs: { href: "#" } }, [_vm._v("Mark")]),
+                        _vm._v(" "),
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "post-edit", params: { id: post.id } }
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-pencil-alt" })]
+                        ),
+                        _vm._v(" "),
+                        _c("delete-button", {
+                          attrs: { "post-id": post.id },
+                          on: { action: _vm.deletePost }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("p", { domProps: { innerHTML: _vm._s(post.desc) } })
+                  ])
+                })
               ),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(1)
             ])
           : _vm._e()
     ]),
     _vm._v(" "),
     !_vm.loading
       ? _c("footer", { staticClass: "blog-footer" }, [
-          _vm._m(3),
+          _vm._m(2),
           _vm._v(" "),
-          _vm._m(4)
+          _vm._m(3)
         ])
       : _vm._e()
   ])
@@ -48225,24 +48239,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "blog-header" }, [
-      _c("h1", { staticClass: "blog-title" }, [_vm._v("The Bootstrap Blog")]),
+      _c("h1", { staticClass: "blog-title" }, [_vm._v("The Blog page")]),
       _vm._v(" "),
       _c("p", { staticClass: "lead blog-description" }, [
-        _vm._v(
-          "The official example template of creating a blog with Bootstrap."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", [
-      _c("ul", { staticClass: "pager" }, [
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Previous")])]),
-        _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Next")])])
+        _vm._v("Write/Delete/Edit/Watch your posts in your blog")
       ])
     ])
   },
@@ -48255,10 +48255,8 @@ var staticRenderFns = [
         _c("h4", [_vm._v("About")]),
         _vm._v(" "),
         _c("p", [
-          _vm._v("Etiam porta "),
-          _c("em", [_vm._v("sem malesuada magna")]),
           _vm._v(
-            " mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur."
+            "Project was created just for practice, for practicing knowledge of Laravel + Vue JS. The project will be updated, should add new features, new stuff that you could enjoy it."
           )
         ])
       ]),
@@ -48268,21 +48266,34 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("ol", { staticClass: "list-unstyled" }, [
           _c("li", [
-            _c("a", { attrs: { target: "_blank", href: "#" } }, [
-              _vm._v("GitHub")
-            ])
+            _c(
+              "a",
+              {
+                attrs: { target: "_blank", href: "https://github.com/mrcat323" }
+              },
+              [_vm._v("GitHub")]
+            )
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { target: "_blank", href: "#" } }, [
-              _vm._v("Twitter")
-            ])
+            _c(
+              "a",
+              {
+                attrs: {
+                  target: "_blank",
+                  href: "https://twitter.com/mrcat323"
+                }
+              },
+              [_vm._v("Twitter")]
+            )
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { target: "_blank", href: "#" } }, [
-              _vm._v("Facebook")
-            ])
+            _c(
+              "a",
+              { attrs: { target: "_blank", href: "https://t.me/mrcat323" } },
+              [_vm._v("Telegram")]
+            )
           ])
         ])
       ])
@@ -48293,13 +48304,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", [
-      _vm._v("Blog template built for "),
-      _c("a", { attrs: { href: "http://getbootstrap.com" } }, [
-        _vm._v("Bootstrap")
-      ]),
-      _vm._v(" by "),
-      _c("a", { attrs: { href: "https://twitter.com/mdo" } }, [_vm._v("@mdo")]),
-      _vm._v(".")
+      _vm._v("© Copyright 2018 Made with "),
+      _c("i", { staticClass: "fa fa-heart" }),
+      _vm._v(" by Mr. CaT")
     ])
   },
   function() {
@@ -48404,7 +48411,7 @@ exports = module.exports = __webpack_require__(61)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48780,6 +48787,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -48835,22 +48849,26 @@ var render = function() {
       _vm._v(" "),
       !_vm.error
         ? _c("div", { staticClass: "post-view" }, [
-            _c("div", { staticClass: "blog-post" }, [
-              _c("h2", { staticClass: "blog-post-title" }, [
-                _vm._v(_vm._s(_vm.post.title))
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "blog-post-meta" }, [
-                _vm._v(_vm._s(_vm.post.created_at) + " by "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Mark")])
-              ]),
-              _vm._v(" "),
-              _c("p", { domProps: { innerHTML: _vm._s(_vm.post.desc) } })
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "blog-post" }, [
+                _c("h2", { staticClass: "blog-post-title" }, [
+                  _vm._v(_vm._s(_vm.post.title))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "blog-post-meta" }, [
+                  _vm._v(_vm._s(_vm.post.created_at) + " by "),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Mark")])
+                ]),
+                _vm._v(" "),
+                _c("p", { domProps: { innerHTML: _vm._s(_vm.post.desc) } })
+              ])
             ])
           ])
         : _vm.error
           ? _c("div", { staticClass: "error-404" }, [_vm._m(0)])
-          : _vm._e()
+          : _vm._e(),
+      _vm._v(" "),
+      _vm._m(1)
     ],
     1
   )
@@ -48862,6 +48880,20 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "jumbotron" }, [
       _c("h2", { staticClass: "text-center" }, [_vm._v("Error 404 Not Found")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "blog-footer" }, [
+      _c("p", [
+        _vm._v("© Copyright 2018 Made with "),
+        _c("i", { staticClass: "fa fa-heart" }),
+        _vm._v(" by Mr. CaT")
+      ]),
+      _vm._v(" "),
+      _c("p", [_c("a", { attrs: { href: "#" } }, [_vm._v("Back to top")])])
     ])
   }
 ]

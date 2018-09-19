@@ -3,8 +3,8 @@
       <div class="container">
 
         <div class="blog-header">
-          <h1 class="blog-title">The Bootstrap Blog</h1>
-          <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+          <h1 class="blog-title">The Blog page</h1>
+          <p class="lead blog-description">Write/Delete/Edit/Watch your posts in your blog</p>
         </div>
         <div class="loading" v-if="loading">Loading...</div>
         <div class="row" v-else-if="posts">
@@ -19,27 +19,20 @@
               <delete-button :post-id="post.id" @action="deletePost"></delete-button></p>
               <p v-html="post.desc"></p>
             </div><!-- /.blog-post -->
-            <nav>
-              <ul class="pager">
-                <li><a href="#">Previous</a></li>
-                <li><a href="#">Next</a></li>
-              </ul>
-            </nav>
-
           </div><!-- /.blog-main -->
 
           <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
               <h4>About</h4>
-              <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+              <p>Project was created just for practice, for practicing knowledge of Laravel + Vue JS. The project will be updated, should add new features, new stuff that you could enjoy it.</p>
             </div>
 
             <div class="sidebar-module">
               <h4>Elsewhere</h4>
               <ol class="list-unstyled">
-                <li><a target="_blank" href="#">GitHub</a></li>
-                <li><a target="_blank" href="#">Twitter</a></li>
-                <li><a target="_blank" href="#">Facebook</a></li>
+                <li><a target="_blank" href="https://github.com/mrcat323">GitHub</a></li>
+                <li><a target="_blank" href="https://twitter.com/mrcat323">Twitter</a></li>
+                <li><a target="_blank" href="https://t.me/mrcat323">Telegram</a></li>
               </ol>
             </div>
           </div><!-- /.blog-sidebar -->
@@ -49,7 +42,7 @@
       </div>
 
       <footer class="blog-footer" v-if="!loading">
-        <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        <p>&copy; Copyright 2018 Made with <i class="fa fa-heart"></i> by Mr. CaT</p>
         <p>
           <a href="#">Back to top</a>
         </p>
