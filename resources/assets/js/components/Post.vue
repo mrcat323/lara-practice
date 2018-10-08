@@ -5,7 +5,7 @@
       <div class="container">
         <div class="blog-post">
           <h2 class="blog-post-title">{{ post.title }}</h2>
-          <p class="blog-post-meta">{{ post.created_at }} by <a href="#">Mark</a> <router-link class="btn btn-lg btn-success" :to="{ name: 'post-edit', params: {id: post.id} }"><i class="fa fa-pencil-alt"></i></router-link></p>
+          <p class="blog-post-meta">{{ post.created_at }} by <a href="#">Mark</a> <router-link class="btn btn-success" :to="{ name: 'post-edit', params: {id: post.id} }"><i class="fa fa-pencil-alt"></i></router-link></p>
           <p v-html="post.desc"></p>
         </div><!-- /.blog-post -->
       </div>
