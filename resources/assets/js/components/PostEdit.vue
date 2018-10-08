@@ -48,15 +48,15 @@ export default {
   },
   methods: {
     grabPost(postId) {
-        let self = this,
-            url = '/api/post/edit/' + postId;
+      let self = this,
+          url = '/api/post/edit/' + postId;
 
-        Vue.http.get(url).then(function (response) {
-          const result = response.data.object;
-          self.post = result;
-        }, function (error) {
-          self.error = true;
-        });
+      Vue.http.get(url).then(function (response) {
+        const result = response.data.object;
+        self.post = result;
+      }, function (error) {
+        self.error = true;
+      });
     },
     editPost() {
       let self = this,
@@ -67,7 +67,7 @@ export default {
         self.response = true;
       }, function (error) {
         throw error;
-      })
+      });
     },
     deletePost() {
       let self = this,

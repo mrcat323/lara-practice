@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link class="btn btn-lg btn-default" :to="{ name: 'blog' }"><i class="fa fa-arrow-left"></i> </router-link>
+    <button class="btn btn-lg btn-default" @click="back"><i class="fa fa-arrow-left"></i> </button>
     <div class="post-view" v-if="!error">
       <div class="container">
         <div class="blog-post">
@@ -39,16 +39,19 @@ export default {
   },
   methods: {
     grabPost(postId) {
-        let self = this,
-            url = '/api/post/edit/' + postId;
+      let self = this,
+          url = '/api/post/edit/' + postId;
 
-        Vue.http.get(url).then(function (response) {
-          const result = response.data.object;
-          self.post = result;
-        }, function (error) {
-          self.error = true;
-        });
+      Vue.http.get(url).then(function (response) {
+        const result = response.data.object;
+        self.post = result;
+      }, function (error) {
+        self.error = true;
+      });
     },
+    back() {
+      this.$router.go(-1);
+    }
   },
   created() {
     let postId = this.$route.params.id;

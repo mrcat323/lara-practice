@@ -48411,7 +48411,7 @@ exports = module.exports = __webpack_require__(61)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48819,6 +48819,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
       }, function (error) {
         self.error = true;
       });
+    },
+    back: function back() {
+      this.$router.go(-1);
     }
   },
   created: function created() {
@@ -48835,43 +48838,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "router-link",
-        {
-          staticClass: "btn btn-lg btn-default",
-          attrs: { to: { name: "blog" } }
-        },
-        [_c("i", { staticClass: "fa fa-arrow-left" })]
-      ),
-      _vm._v(" "),
-      !_vm.error
-        ? _c("div", { staticClass: "post-view" }, [
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "blog-post" }, [
-                _c("h2", { staticClass: "blog-post-title" }, [
-                  _vm._v(_vm._s(_vm.post.title))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "blog-post-meta" }, [
-                  _vm._v(_vm._s(_vm.post.created_at) + " by "),
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Mark")])
-                ]),
-                _vm._v(" "),
-                _c("p", { domProps: { innerHTML: _vm._s(_vm.post.desc) } })
-              ])
+  return _c("div", [
+    _c(
+      "button",
+      { staticClass: "btn btn-lg btn-default", on: { click: _vm.back } },
+      [_c("i", { staticClass: "fa fa-arrow-left" })]
+    ),
+    _vm._v(" "),
+    !_vm.error
+      ? _c("div", { staticClass: "post-view" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "blog-post" }, [
+              _c("h2", { staticClass: "blog-post-title" }, [
+                _vm._v(_vm._s(_vm.post.title))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "blog-post-meta" }, [
+                _vm._v(_vm._s(_vm.post.created_at) + " by "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Mark")])
+              ]),
+              _vm._v(" "),
+              _c("p", { domProps: { innerHTML: _vm._s(_vm.post.desc) } })
             ])
           ])
-        : _vm.error
-          ? _c("div", { staticClass: "error-404" }, [_vm._m(0)])
-          : _vm._e(),
-      _vm._v(" "),
-      _vm._m(1)
-    ],
-    1
-  )
+        ])
+      : _vm.error
+        ? _c("div", { staticClass: "error-404" }, [_vm._m(0)])
+        : _vm._e(),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -49293,8 +49289,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
   },
   computed: {
     date: function date() {
-      var now = Date.now();
-      __WEBPACK_IMPORTED_MODULE_2_dayjs___default()(now);
+      __WEBPACK_IMPORTED_MODULE_2_dayjs___default()(Date.now());
       var converted = __WEBPACK_IMPORTED_MODULE_2_dayjs___default()().year() + '-' + __WEBPACK_IMPORTED_MODULE_2_dayjs___default()().month() + '-' + __WEBPACK_IMPORTED_MODULE_2_dayjs___default()().date() + ' ' + __WEBPACK_IMPORTED_MODULE_2_dayjs___default()().hour() + ':' + __WEBPACK_IMPORTED_MODULE_2_dayjs___default()().minute() + ':' + __WEBPACK_IMPORTED_MODULE_2_dayjs___default()().second();
       return converted;
     }

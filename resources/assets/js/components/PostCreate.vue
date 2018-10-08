@@ -45,13 +45,12 @@ export default {
         self.response = true;
       }, function (error) {
         throw error;
-      })
+      });
     }
   },
   computed: {
     date() {
-      let now = Date.now();
-      dayjs(now);
+      dayjs(Date.now());
       let converted = dayjs().year() + '-' + dayjs().month() + '-' + dayjs().date() + ' ' + dayjs().hour() + ':' + dayjs().minute() + ':' + dayjs().second();
       return converted;
     }
