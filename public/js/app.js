@@ -48411,7 +48411,7 @@ exports = module.exports = __webpack_require__(61)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48794,6 +48794,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -48848,18 +48849,34 @@ var render = function() {
     !_vm.error
       ? _c("div", { staticClass: "post-view" }, [
           _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "blog-post" }, [
-              _c("h2", { staticClass: "blog-post-title" }, [
-                _vm._v(_vm._s(_vm.post.title))
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "blog-post-meta" }, [
-                _vm._v(_vm._s(_vm.post.created_at) + " by "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Mark")])
-              ]),
-              _vm._v(" "),
-              _c("p", { domProps: { innerHTML: _vm._s(_vm.post.desc) } })
-            ])
+            _c(
+              "div",
+              { staticClass: "blog-post" },
+              [
+                _c("h2", { staticClass: "blog-post-title" }, [
+                  _vm._v(_vm._s(_vm.post.title))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "blog-post-meta" }, [
+                  _vm._v(_vm._s(_vm.post.created_at) + " by "),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Mark")])
+                ]),
+                _vm._v(" "),
+                _c("p", { domProps: { innerHTML: _vm._s(_vm.post.desc) } }),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-lg btn-success",
+                    attrs: {
+                      to: { name: "post-edit", params: { id: _vm.post.id } }
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-pencil-alt" })]
+                )
+              ],
+              1
+            )
           ])
         ])
       : _vm.error

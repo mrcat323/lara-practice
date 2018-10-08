@@ -7,6 +7,7 @@
           <h2 class="blog-post-title">{{ post.title }}</h2>
           <p class="blog-post-meta">{{ post.created_at }} by <a href="#">Mark</a></p>
           <p v-html="post.desc"></p>
+          <router-link class="btn btn-lg btn-success" :to="{ name: 'post-edit', params: {id: post.id} }"><i class="fa fa-pencil-alt"></i></router-link>
         </div><!-- /.blog-post -->
       </div>
     </div>
