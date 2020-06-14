@@ -6197,9 +6197,9 @@ vue-resource@^1.5.1:
   dependencies:
     got "^8.0.3"
 
-vue-router@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.6.tgz#2e4f0f9cbb0b96d0205ab2690cfe588935136ac3"
+vue-router@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.4.tgz#4e38abc34a11c41b6c3d8244449a2e363ba6250b"
 
 vue-style-loader@^3.0.0:
   version "3.0.3"
