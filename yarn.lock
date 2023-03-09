@@ -3258,8 +3258,8 @@ isurl@^1.0.0-alpha5:
     is-object "^1.0.1"
 
 jquery@^3.2:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.0.tgz#8de513fa0fa4b2c7d2e48a530e26f0596936efdf"
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.4.tgz#ba065c188142100be4833699852bf7c24dc0252f"
 
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.4.0"
